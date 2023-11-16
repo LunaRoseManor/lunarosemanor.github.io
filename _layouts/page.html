@@ -3,6 +3,8 @@ layout: default
 ---
 
 {%- if page.title -%}
-    <h2>{{ page.title }}</h2>
+    <div class="page-header">
+        <h2 class="page-title">{{ page.title }}</h2>
+    </div>
 {%- endif -%}
 {{ content }}

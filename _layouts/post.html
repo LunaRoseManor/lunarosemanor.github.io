@@ -9,14 +9,16 @@ layout: default
 </style>
 
 {%- if page.title -%}
-    <h2>{{ page.title }}</h2>
-    <h3>
-        {%- if page.author -%}
-            by
-            {{ page.author }}
-            on&nbsp;
-        {%- endif -%}
-        {{ page.date | date: "%b %-d, %Y" }}
-    </h3>
+    <div class="page-header">
+        <h2 class="page-title">{{ page.title }}</h2>
+        <h3>
+            {%- if page.author -%}
+                by
+                {{ page.author }}
+                on&nbsp;
+            {%- endif -%}
+            {{ page.date | date: "%b %-d, %Y" }}
+        </h3>
+    </div>
     {%- endif -%}
 {{ content }}

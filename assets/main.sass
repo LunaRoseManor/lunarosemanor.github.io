@@ -34,15 +34,18 @@ nav
 
     a
         padding-right: $padding
-        text-decoration: none
-
-        &:hover
-            color: $color-comment
-            text-decoration: underline
 
 // Hyperlinks
 a
     color: $color-cyan
+    text-decoration: none
+
+    &:hover
+        color: $color-comment
+        text-decoration: underline
+    
+    *
+        color: inherit
 
 // Syntax highlighting with Rouge
 pre
@@ -50,6 +53,7 @@ pre
 
 // Blockquotes
 blockquote
+    display: block
     font-style: italic
     border-left: 1px solid $color-comment
     padding-left: $padding
@@ -69,9 +73,6 @@ body
     padding: 0
     margin: 0
 
-*
-    box-sizing: inherit
-
 .wrapper
     min-height: 100%
     max-width: $width
@@ -82,11 +83,17 @@ body
     margin-left: auto
 
 header, footer, main 
+    box-sizing: border-box
     padding: $padding * 2
-
-    // Don't understand why I need this
-header h1
-    color: $color-cyan
-
-main
     height: 100%
+
+// Layout specific styles
+.page-header
+    padding-bottom: $padding
+
+.page-title
+    margin: 0
+
+.page-title+h3
+    font-size: 0.5em
+    color: $color-comment
