@@ -1,9 +1,8 @@
 ---
 ---
 
-/*
- * Custom styles
- */
+@import syntax-highlighting
+
 // Colour scheme based off the Dracula syntax highlighting theme
 // Source: https://github.com/dracula/atom/blob/f6ff68052107a7f278e57215960080605d2c24c3/styles/colors.less
 // dracula colors
@@ -22,56 +21,72 @@ $color-pink: #FF79C6
 // Margins and padding
 $padding: 1em
 
-a
-    color: $color-cyan
-    text-decoration: none
+// Width and height
+$width: 36em
 
-    &:hover
-        color: $color-comment
-        text-decoration: underline
-
-header, main, footer
-    padding: $padding
-
-/*
- * Default String Theory styles
- * Source: https://github.com/LunaRoseManor/jekyll-string-theory
- */
-html, body
-    box-sizing: border-box
-    background-color: $color-background
-    width: 100%
-    height: 100%
-    padding: 0
-    margin: 0
-    display: flex
-    align-items: center
-    justify-content: center
-    flex-direction: column
-
-body
-    box-sizing: border-box
-    color: $color-foreground
-    line-height: 2em
-    font-family: "Arial", "Helvetica", sans-serif
-    font-size: 16pt
-    max-width: 36em
-    padding: $padding
-
-main
-    flex-grow: 1
-    width: 100%
-
-header, footer
-    flex-grow: 0
-    flex-shrink: 0
-    width: 100%
-
+// Navbar
 nav
-    border-top: 1px solid $color-comment
-    border-bottom: 1px solid $color-comment
     padding-top: $padding
     padding-bottom: $padding
 
+    border-top: 1px solid $color-comment
+    border-bottom: 1px solid $color-comment
+
     a
-        margin-right: 1em
+        padding-right: $padding
+        text-decoration: none
+
+        &:hover
+            color: $color-comment
+            text-decoration: underline
+
+// Hyperlinks
+a
+    color: $color-cyan
+
+// Syntax highlighting with Rouge
+pre
+    padding: $padding
+
+// Blockquotes
+blockquote
+    font-style: italic
+    border-left: 1px solid $color-comment
+    padding-left: $padding
+    margin: 0
+
+// Sticky footer example downloaded from:
+// Source: https://github.com/mdn/css-examples/blob/main/css-cookbook/sticky-footer--download.html
+html
+    height: 100%
+    border-sizing: border-box
+    background: $color-background
+    color: $color-foreground
+
+body
+    height: 100%
+    font: 16pt Helvetica Neue, Helvetica, Arial, sans-serif
+    padding: 0
+    margin: 0
+
+*
+    box-sizing: inherit
+
+.wrapper
+    min-height: 100%
+    max-width: $width
+    display: grid
+    grid-template-rows: auto 1fr auto
+    align-items: center
+    margin-right: auto
+    margin-left: auto
+
+header, footer, main 
+    padding: $padding * 2
+
+    // Don't understand why I need this
+header h1
+    color: $color-cyan
+
+main
+    height: 100%
