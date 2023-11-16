@@ -1,9 +1,42 @@
 ---
 ---
 
-$color-background: #fafafa
-$color-text: #2e2e2e
+// Colour scheme based off the Dracula syntax highlighting theme
+// Source: https://github.com/dracula/atom/blob/f6ff68052107a7f278e57215960080605d2c24c3/styles/colors.less
+// dracula colors
+$color-background: #282A36
+$color-foreground: #F8F8F2
+$color-selection: #44475A
+$color-comment: #6272A4
+$color-red: #FF5555
+$color-orange: #FFB86C
+$color-yellow: #F1FA8C
+$color-green: #50FA7B
+$color-purple: #BD93F9
+$color-cyan: #8BE9FD
+$color-pink: #FF79C6
 
+// Margins and padding
+$padding: 0.5em
+
+/*
+ * Custom styles
+ */
+a
+    color: $color-cyan
+    text-decoration: none
+
+    &:hover
+        color: $color-comment
+        text-decoration: underline        
+
+header, main, footer
+    padding: $padding
+
+/*
+ * Default String Theory styles
+ * Source: https://github.com/LunaRoseManor/jekyll-string-theory
+ */
 html, body
     box-sizing: border-box
     background-color: $color-background
@@ -35,8 +68,8 @@ header, footer
     width: 100%
 
 nav
-    border-top: 1px solid #e2e2e2
-    border-bottom: 1px solid #e2e2e2
+    border-top: 1px solid $color-comment
+    border-bottom: 1px solid $color-comment
     padding-top: 1em
     padding-bottom: 1em
 

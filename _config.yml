@@ -1,5 +1,6 @@
 title: Your awesome title
 author: Luna
+license: MIT License
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
@@ -9,7 +10,7 @@ description: >
   results) and in your feed.xml site description.
 
 # Build settings
-theme: minima
+theme: minima # GitHub Pages doesn't naitvely support String Theory
 
 plugins:
   - jekyll-feed
