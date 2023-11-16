@@ -1,4 +1,4 @@
-title: Your awesome title
+title: Luna Rose Manor
 author: Luna
 license: MIT License
 
@@ -10,15 +10,17 @@ description: >
   results) and in your feed.xml site description.
 
 # Build settings
-theme: minima # GitHub Pages doesn't naitvely support String Theory
+#theme: minima # GitHub Pages doesn't naitvely support String Theory
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+#plugins:
+#  - jekyll-feed
+#  - jekyll-seo-tag
 
 # Theme-specific settings
+#styles:
+#  - /assets/custom.css
 
-minima:
+#minima:
   # Minima date format.
   # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
   #

@@ -17,7 +17,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.16.3-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.0-x64-mingw-ucrt)
+    google-protobuf (3.25.1-x64-mingw-ucrt)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -37,8 +37,12 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-feed (0.17.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
+    jekyll-seo-tag (2.8.0)
+      jekyll (>= 3.8, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.4.0)
@@ -70,6 +74,8 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  jekyll-feed
+  jekyll-seo-tag
   jekyll-string-theory!
 
 BUNDLED WITH
