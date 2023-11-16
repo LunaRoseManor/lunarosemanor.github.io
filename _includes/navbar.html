@@ -1,0 +1,33 @@
+{%- comment -%}
+    I've been working on this for four hours so I'll keep it simple.
+
+    Adding in a nav element to the header introduces a tricky problem. How
+    do you make it respond to the user's file structure without them having
+    to code anything? How do you stop it throwing a tantrum?
+
+    Jekyll doesn't really have anything built in to do this. You get a
+    small handful of local variables. Liquid also doesn't have regular
+    expressions, making searching through results impossible.
+
+    Instead of that, String Theory just tries to mimic Minima's default
+    behaviour and search through the asset tree to find pages that have
+    titles. If a page hasn't been titled, it's probably not important.
+
+    Otherwise, the user can set which pages are navigable through data, as
+    recommended by the official Jekyll tutorial:
+    - https://jekyllrb.com/tutorials/navigation/
+{%- endcomment -%}
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: "title" | join: "" | size -%}
+{%- if titles_size > 0 -%}
+    <nav>
+        {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            
+            {%- if my_page.title -%}
+                <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            {%- endif -%}
+        {% endfor %}
+    </nav>
+{%- endif -%}

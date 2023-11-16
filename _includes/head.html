@@ -1,0 +1,12 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} &vert; {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    {%- if site.styles -%}
+        {%- for style in site.styles -%}
+        <link rel="stylesheet" href="{{ style | relative_url }}">
+        {%- endfor -%}
+    {%- endif -%}
+    <meta name="description" content="{{ site.description }}">
+</head>
