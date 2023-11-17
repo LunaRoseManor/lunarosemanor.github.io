@@ -127,7 +127,8 @@ understanding *how* that's supposed to work requires looking at the
 The actual snippet contains a lot of content that isn't actually useful to
 understanding what's going on, so let's fix that:
 
-```html
+```
+{%- raw -%}
 {%- assign default_paths = site.pages | map: "path" -%}
 {%- assign page_paths = site.header_pages | default: default_paths -%}
 {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
@@ -142,7 +143,9 @@ understanding what's going on, so let's fix that:
     {%- endfor -%}
     </nav>
 {%- endif -%}
+{%- endraw -%}
 ```
+(Note that when this page was first published, it was actually running this code)
 
 Now that it's finally cleaned up, you can see that the first line is obtaining
 a list of all the file paths related to pages included in the site. This means

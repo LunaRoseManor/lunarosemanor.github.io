@@ -1,13 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        {%- if page.title -%}
-            {{ page.title }}
-            &vert;&nbsp;
-        {%- endif -%}
-        {{ site.title }}
-    </title>
+    <title>{%- if page.title and if site.title -%}{{ page.title }} &vert; {{ site.title }}{%- endif -%}</title>
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
     {%- if site.styles -%}
         {%- for style in site.styles -%}
