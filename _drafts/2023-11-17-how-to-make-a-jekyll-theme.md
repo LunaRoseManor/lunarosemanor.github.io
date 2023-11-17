@@ -3,13 +3,13 @@ layout: post
 title: How to Make a Jekyll Theme
 ---
 
-Generally you shouldn't.
+Generally speaking, you shouldn't.
 
-I strongly advise you to use an existing one. There are already
-[dozens available](https://jekyllrb.com/docs/themes). Just because a solution
+There are already [dozens available](https://jekyllrb.com/docs/themes). Just because a solution
 [wasn't invented here](https://en.wikipedia.org/wiki/Not_invented_here) doesn't
 make it lesser. Your aim should be to become a writer, not a theme developer.
-If you have a mind like mine however, that's probably not an acceptable answer. You don't just want to avoid learning about a topic like this, you want to know
+If you have a mind like mine however, that's not an acceptable answer.
+You don't just want to avoid learning about a topic like this, you want to know
 it. It's from this line of thinking that I came up with the idea for
 [String Theory](https://github.com/LunaRoseManor/string-theory). It's my answer
 to the question...
@@ -18,8 +18,7 @@ to the question...
 
 As it turns out, it's not that small. Around 10 KB when it had all the features
 I would consider necessary given Jekyll's core feature set. I want to go into
-more detail about the challenges I faced when building it and what I'd change
-in the future. This should help anyone else looking to follow in my footsteps.
+more detail about the challenges I faced in case anyone else needs help with it.
 
 # Goals
 I had three key goals going into this project:
@@ -107,9 +106,43 @@ year of its release, then you'll have to spend time sorting through the data
 until you get what you need.
 
 ## Navigation Bar
-This one had me stumped for ages. The idea itself is simple. Anchor tags don't
+This one had me stumped for hours. The idea itself is simple. Anchor tags don't
 nest by default, so all you need to do is iterate through the global list of
-pages and find ones that aren't part of the default. Except it doesn't really 
+pages and find ones that aren't for site structure. Except it doesn't really 
+work that way. I wrote the code for the navbar several times leading up to this
+post. At some point, I may have to write it again. The problem is that if you
+just include every page in the navigation bar's iteration step, then you run the
+risk of including things that aren't meant to be distinct pages. You don't give
+the user enough control over their layout.
+
+Minima has the right idea. Only adding pages to the navbar by default that
+have titles and giving you the option to overwrite them with data. But actually
+understanding *how* that's supposed to work requires looking at the
+[source code](https://github.com/jekyll/minima/blob/master/_includes/header.html).
+The actual snippet contains a lot of content that isn't actually useful to
+understanding what's going on, so let's fix that:
+
+```html
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+
+{%- if titles_size > 0 -%}
+    <nav class="site-nav">
+    {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page title | escape }}</a>
+        {%- endif -%}
+    {%- endfor -%}
+    </nav>
+{%- endif -%}
+```
+
+Now that it's finally cleaned up, you can see that the first line is obtaining
+a list of all the file paths related to pages included in the site. This means
+that when the second line attempts to find a list of overrides from the
+`_config.yml` file, there's 
 
 --------------------------------------------------------------------------------
 

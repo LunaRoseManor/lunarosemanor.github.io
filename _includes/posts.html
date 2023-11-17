@@ -2,8 +2,8 @@
 <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
-        <span>{{ post.date | date: "%A, %b %d, %Y" }}</span>
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <span>{{ post.date | date: "%A, %b %d, %Y" }}</span>
     </li>
     {%- endfor -%}
 </ul>
