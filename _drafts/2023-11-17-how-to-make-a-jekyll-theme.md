@@ -14,7 +14,7 @@ it. It's from this line of thinking that I came up with the idea for
 [String Theory](https://github.com/LunaRoseManor/string-theory). It's my answer
 to the question...
 
-> '...what's the smallest possible Jekyll theme?'
+> "...what's the smallest possible Jekyll theme?"
 
 As it turns out, it's not that small. Around 10 KB when it had all the features
 I would consider necessary given Jekyll's core feature set. I want to go into
@@ -34,8 +34,7 @@ the eyes than [this](https://info.cern.ch/hypertext/WWW/TheProject.html). Since
 I didn't know how to write my own, I used a couple of already released
 themes as reference for what a new user might expect. Luckily the code used for
 themes like [minima](https://github.com/jekyll/minima) is relatively small, if
-a little sparsely documented. Though it towers over the default files included
-with the `Jekyll new theme` command, primarily because of the plugins included.
+a little sparsely documented.
 
 # Speed
 Most people's computers, network connections and browsers are enough to handle
@@ -61,7 +60,7 @@ website looks, the more markup and styles are required to support it. At the
 same time, I get genuinely uncomfortable looking at sites that show a wanton
 disregard for size and spacing, so there's a balance that needs to be struck.
 It needs to be just the right amount of visual design to stand out and focused
-enough to get the job done. "Getting the job done" here to me would be:
+enough to get the job done. By this I mean:
 
 - A centralised layout
 - With wide, responsive margins
@@ -72,15 +71,21 @@ Luckily, most of this stuff is pretty routine and doable.
 [Centering things in CSS](https://www.w3.org/Style/Examples/007/center.en.html)
 has and continues to be a pain for the foreseeable future, but it's mostly plain
 sailing from there. [The box model](https://www.w3schools.com/Css/css_boxmodel.asp)
-aside, it only takes about ~40 lines of code to get what you see here. I cut out
+aside, it only takes about 83 lines of code to get what you see here. I cut out
 a lot of bloat by refusing to use media queries and focusing solely on desktops.
+This isn't generally acceptable practice, but really all you need to make your
+site responsive is ensuring that it changes shape depending on the width of the
+display, and you can usually do that by declaring a single `<meta>` element in
+HTML and giving your content wrapper a maximum width. This won't save you from
+CSS suddenly having convenient accidents like eating your header or yanking your
+site to the right hand side, but that's besides the point.
 
 # Simplicity
 The tricky part. Jekyll's core feature set is pretty feature rich, even without
 plugins. This means if you're starting from scratch, you've got to work within
 the same assumptions. For String Theory I decided to only go with things that
 were in minima. That way, there'd be nothing lost or added between themes. Only
-problem is that GitHub pages (where this site is currently hosted) assumes that
+problem is that GitHub Pages (where this site is currently hosted) assumes that
 you want analytics and search engine optimization.
 
 ## Layouts
@@ -163,6 +168,26 @@ The fact I have to do so much to explain this code probably means it's better to
 rely on data to figure out what pages should be included in the navigation bar.
 If there's a more readable way to implement this behaviour, I don't see it.
 
+## Syntax Highlighting
+Oh, this one was tricky. Everything else worked fine after I set some reasonable
+defaults. I'm allergic to
+[div soup](https://css-tricks.com/twitters-div-soup-and-uglyfied-css-explained/)
+so I tend to prefer hooking into individual elements rather than classes. With
+[Rouge](https://github.com/rouge-ruby/rouge) you have no choice. It's installed
+by default and it has a bunch of different classes for colours that you need to
+style individually. Luckily there are some templates available online that
+you're able to steal, but none that use Dracula, that I could find. I used one
+for Zenburn thinking it was for a different theme. You really have to power
+through this step, looking up the documentation to figure out what the classes
+mean and plugging in class declarations that match accordingly.
+
 # Success?
-Ultimately, I ended up having to throw out most of the code I'd written for
-String Theory.
+Even though String Theory *works*, there's no escaping that it was developed
+very quickly and without much sleep. When it came time to porting the theme over
+to GitHub Pages, it became immediately clear that there wasn't any neat way to
+actually use it. I ended up scrapping a lot of the styles I had written and
+stumbling around in the dark trying to get the site to look the same remotely as
+it does on my local machine. My goals changed after I realised that if anyone
+else used my theme, their blog would look the exact same as mine and I couldn't
+have that. I might end up having two. One for demonstration purposes of what's
+possible and another that I actually use for the site internally.
