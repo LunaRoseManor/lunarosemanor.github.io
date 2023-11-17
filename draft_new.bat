@@ -15,7 +15,7 @@ set drafts_folder=_drafts
 set date_string=%year%-%month%-%day%
 set title=%1
 set extension=md
-set file_path=%drafts_folder%/%date_string%-%title%.%extension%
+set file_path=%drafts_folder%\%date_string%-%title%.%extension%
 
 rem Finally, output front matter to the file so it exists in the file system.
 rem NOTE: Each subsequent call to `echo` after the first must use ">>"
