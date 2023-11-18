@@ -1,10 +1,45 @@
 // Defines the overall layout of the site. Includes things like the default
 // width and height of elements, whilst also making the footer stick to the
 // bottom of the page for better use of whitespace.
-$spacing-unit: 1em
+//
+// Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers#the_recipe
+$spacing-unit: 1em // The average distance elements should be spaced from each other
+$content-width: 36em // How wide the content should be
+$line-height: $spacing-unit * 2
 
-/* Sticky Footer */
-// Source: 
+// Reset the whitespace on elements so it can be set manually
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure
+    margin: 0
+    margin-bottom: $spacing-unit // Maintain vertical rhythm
+    padding: 0
+
+// Weird fix I have to include for normalize.css for some reason
+h1
+    margin: 0 !important
+
+// Establish basic styling rules
+body
+    font: $font-size-base $font-stack-content
+    line-height: $font-line-height
+    color: $color-foreground
+    background-color: $color-background
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+    overflow-wrap: break-word
+    align-items: center
+
+/* Code formatting */
+pre
+    padding: $spacing-unit
+
+pre, code
+    overflow-x: auto
+
+// Forces a sticky footer whilst also providing more utility
+// 
 html, body
     box-sizing: border-box
     height: 100%
@@ -14,12 +49,15 @@ html, body
 .wrapper
     box-sizing: border-box
     min-height: 100%
+    max-width: $content-width
     display: flex
     flex-direction: column
+    padding: $spacing-unit
 
 .page-header, .page-footer
     flex-grow: 0
     flex-shrink: 0
+    padding: $spacing-unit
 
 .page-body
     flex-grow: 1
