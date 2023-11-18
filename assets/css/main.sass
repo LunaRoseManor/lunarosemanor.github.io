@@ -1,11 +1,7 @@
 ---
 ---
 // The main sass file, which collates all of the different sass mixins into a
-// single file to be built. Jekyll should copy this file to `/assets/main.css`
+// single file to be built. Jekyll should copy this file to `/assets/css/main.css`
 // which means that no other file can share that name in this folder. Ideally,
-// this file should be the only one that relates to site styles. CSS libraries
-// should be included in the `_config.yml` file in the root folder. Ideally,
-// this sass file should be in a separate "styles" folder inside the "assets"
-// folder, but that mean the default minima styles don't get overwritten
-// when this gets run on GitHub Pages and the compatibility is needed.
-@import colors
+// this file should be the only one that relates to site styles.
+@import colors, fonts, layout

@@ -4,4 +4,5 @@ lang: en-GB
 description: >-
   Coding vampire blog.
 styles:
-  - /assets/normalize.css
+  - /assets/css/main.css
+  - /assets/css/normalize.css
