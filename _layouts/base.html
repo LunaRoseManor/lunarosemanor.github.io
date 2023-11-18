@@ -6,12 +6,14 @@ The base layout from which all others are derived.
 <html lang="{{ site.lang | default: site.lang | default: "en" }}">
     {%- include head.html -%}
     <body>
-        {%- include header.html -%}
-        <main aria-label="Site content">
-            <div class="wrapper">
-                {{ content }}
-            </div>
-        </main>
-        {%- include footer.html -%}
+        <div class="wrapper">
+            {%- include header.html -%}
+            <main class="page-body" aria-label="Site content">
+                <div class="wrapper">
+                    {{ content }}
+                </div>
+            </main>
+            {%- include footer.html -%}
+        </div>
     </body>
 </html>
