@@ -1,11 +1,8 @@
 <footer>
-    {%- if site.license -%}
-    <small>{{ site.license }}</small>
-    {%- endif -%}
-    <small>
-        Made with
-        <a href="https://jekyllrb.com" target="_blank">Jekyll</a>
-        and
-        <a href="https://github.com/LunaRoseManor/jekyll-string-theory/" target="_blank">String Theory</a>
-    </small>
+    <div class="wrapper">
+        <small>
+            Copyright &copy; {{ site.author }} {{ "Now" | date: "%Y" }},
+            all rights reserved.
+        </small>
+    </div>
 </footer>

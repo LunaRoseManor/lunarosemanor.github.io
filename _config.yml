@@ -1,9 +1,7 @@
 title: Luna Rose Manor
 author: Emily "Luna" Ahlquist
-license: MIT License
 lang: en-GB
-
-# The `>` after `description:` means to ignore line-breaks until next key.
-# If you want to omit the line-break after the end of text, use `>-` instead.
 description: >-
   Coding vampire blog.
+styles:
+  - /assets/normalize.css

@@ -1,0 +1,17 @@
+{% comment %}
+The base layout from which all others are derived.
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: site.lang | default: "en" }}">
+    {%- include head.html -%}
+    <body>
+        {%- include header.html -%}
+        <main>
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </main>
+        {%- include footer.html -%}
+    </body>
+</html>
