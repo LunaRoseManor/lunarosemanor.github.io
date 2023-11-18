@@ -42,13 +42,18 @@ pre
 
 /* Blockquotes */
 blockquote
-    border-left: 1px solid $color-light-gray
+    border-left: 1px solid $color-comment
     padding-left: $spacing-unit
     font-style: italic
 
 /* Hyperlinks */
 a
     color: $color-cyan
+    text-decoration: none
+
+    &:hover
+        color: $color-comment
+        text-decoration: underline
 
 /* Sticky footer */
 html, body
