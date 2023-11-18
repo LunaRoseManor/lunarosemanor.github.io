@@ -128,7 +128,7 @@ The actual snippet contains a lot of content that isn't actually useful to
 understanding what's going on, so let's fix that:
 
 {% raw %}
-```
+```html
 {%- assign default_paths = site.pages | map: "path" -%}
 {%- assign page_paths = site.header_pages | default: default_paths -%}
 {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}

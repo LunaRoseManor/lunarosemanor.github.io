@@ -20,7 +20,7 @@ ul
     padding-left: $spacing-unit
 
 // Weird fix I have to include for normalize.css for some reason
-h1
+.page-header h1
     margin: 0 !important
 
 // Establish basic styling rules
@@ -38,7 +38,7 @@ body
 /* Code formatting */
 pre
     padding: $spacing-unit
-    overflow-x: scroll
+    overflow-x: auto // Stop the code going off the rails
 
 /* Blockquotes */
 blockquote
@@ -54,6 +54,18 @@ a
     &:hover
         color: $color-comment
         text-decoration: underline
+
+/* navbar */
+nav
+    padding-top: $spacing-unit
+    padding-bottom: $spacing-unit
+    border-top: 1px solid $color-comment
+    border-bottom: 1px solid $color-comment
+
+/* Images */
+img
+    display: block
+    width: 100%
 
 /* Sticky footer */
 html, body
