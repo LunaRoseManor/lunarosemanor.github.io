@@ -8,12 +8,16 @@ $content-width: 36em // How wide the content should be
 $line-height: $spacing-unit * 2
 
 // Reset the whitespace on elements so it can be set manually
-body, h1, h2, h3, h4, h5, h6,
+h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure
     margin: 0
     margin-bottom: $spacing-unit // Maintain vertical rhythm
     padding: 0
+
+// TODO: Write a more elegant fix to get this lined up
+ul
+    padding-left: $spacing-unit
 
 // Weird fix I have to include for normalize.css for some reason
 h1
@@ -27,19 +31,20 @@ body
     background-color: $color-background
     display: flex
     min-height: 100vh
+    width: 100% // Specifying the width is very important to avoid unusual behavior
     flex-direction: column
-    overflow-wrap: break-word
     align-items: center
 
 /* Code formatting */
 pre
     padding: $spacing-unit
+    overflow-x: scroll
 
-pre, code
-    overflow-x: auto
+/* Blockquotes */
+blockquote
 
-// Forces a sticky footer whilst also providing more utility
-// 
+
+/* Sticky footer */
 html, body
     box-sizing: border-box
     height: 100%
@@ -49,10 +54,12 @@ html, body
 .wrapper
     box-sizing: border-box
     min-height: 100%
-    max-width: $content-width
+    height: 100%
+    width: 100%
     display: flex
     flex-direction: column
     padding: $spacing-unit
+    max-width: $content-width
 
 .page-header, .page-footer
     flex-grow: 0
