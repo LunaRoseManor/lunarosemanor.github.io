@@ -20,8 +20,21 @@ ul
     padding-left: $spacing-unit
 
 // Weird fix I have to include for normalize.css for some reason
-.page-header h1
+.page-body .page-header
+    padding: 0 // Absolutely horrible - don't do this!
+
+    h1
+        margin: 0 !important
+// I can't just restrict it to a single class either, it had to be special
+.page-body h1
     margin: 0 !important
+// Oh, and the last child of the body also needs fixing because why not, right?
+.page-body
+    .wrapper
+        p:last-of-type
+            margin: 0 // I don't know why or how, but this fixed a major issue
+// Midnight: Oh, there's a weird issue with headers going all over the place
+// 3AM: I AM THE HEADER HAG AND ALL SHALL KNEEL BEFORE ME
 
 // Establish basic styling rules
 body
@@ -43,11 +56,8 @@ pre
 /* Blockquotes */
 blockquote
     border-left: 1px solid $color-comment
-    padding-left: $spacing-unit
+    padding: $spacing-unit
     font-style: italic
-    
-    p:last-child
-        margin: 0
 
 /* Hyperlinks */
 a
