@@ -45,6 +45,9 @@ blockquote
     border-left: 1px solid $color-comment
     padding-left: $spacing-unit
     font-style: italic
+    
+    p:last-child
+        margin: 0
 
 /* Hyperlinks */
 a
@@ -61,6 +64,20 @@ nav
     padding-bottom: $spacing-unit
     border-top: 1px solid $color-comment
     border-bottom: 1px solid $color-comment
+
+    a
+        margin-right: $spacing-unit
+
+/* Post Header */
+.post-header
+    margin-bottom: $spacing-unit // This has to be reasserted
+
+    h1
+        margin: 0
+
+    h2
+        color: $color-comment
+        font-size: $font-size-small
 
 /* Images */
 img
