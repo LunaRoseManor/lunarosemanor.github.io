@@ -52,7 +52,7 @@ Playset: £5.00
 		<img src="/img/alt-arts/corp/MagistrateRevontulet.jpg" alt="Magistrate Revontulet">
 	</div>
 	<div>
-		<img src="/img/alt-arts/corp/Tocsin.jpg" alt="Tocsin">
+		<img src="/img/alt-arts/corp/Tocsin.png" alt="Tocsin">
 	</div>
 </div>
 
